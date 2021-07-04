@@ -9,3 +9,4 @@ chapters:
 - file: steps
 - file: usage
 - file: lib
+- file: tmp
