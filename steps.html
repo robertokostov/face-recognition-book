@@ -219,7 +219,7 @@
 <span class="n">predictor</span> <span class="o">=</span> <span class="n">dlib</span><span class="o">.</span><span class="n">shape_predictor</span><span class="p">(</span><span class="s2">&quot;media/shape_predictor_68_face_landmarks.dat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="landmark" src="landmark.jpg" /></p>
+<p><img alt="landmark" src="_images/landmark.jpg" /></p>
 </li>
 <li><p>Примена на истото кон изворната слика:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">faces</span> <span class="o">=</span> <span class="n">detector</span><span class="p">(</span><span class="n">img1_gray</span><span class="p">)</span>
@@ -232,14 +232,14 @@
         <span class="n">landmarks_points1</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
-<p><img alt="landmark-example" src="landmark_example.jpg" /></p>
+<p><img alt="landmark-example" src="_images/landmark_example.jpg" /></p>
 </li>
 <li><p>Земање на надворешните “landmark” точки од сликата како релевантни за изборот на лицето:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">landmarks_points1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
     <span class="n">convexhull</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convexHull</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="convexhull_example" src="convexhull_example.jpg" /></p>
+<p><img alt="convexhull_example" src="_images/convexhull_example.jpg" /></p>
 </li>
 <li><p>Со помош на надворешните “landmark” точки кои ги детектиравме креираме маска со чија помош го земаме делот што е внатре во полигонот дефиниран од истите точки како валиден:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">img1_gray</span><span class="p">)</span>
@@ -247,7 +247,7 @@
     <span class="n">cv2</span><span class="o">.</span><span class="n">fillConvexPoly</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">convexhull</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="mask_example" src="mask_example.jpg" /></p>
+<p><img alt="mask_example" src="_images/mask_example.jpg" /></p>
 </li>
 <li><p>Доколку го искористиме целото лице за директна замена, остануваме склони дека при некое движење на истото, насмевка или нешто друго, ќе се добие замена со послаб квалитет. Затоа, замената ќе ја донесеме на ниво на “landmark” точките и методата на триангулација на “Delaunay”. Помеѓу секои три најблиски од нив ќе нацртаме триаголници и замената ќе ја правиме помеѓу нив соодветно. Па така, доколку лицето за замена малку се помрдне, или се насмее, делот од сликата кој ќе биде афектиран од тоа ќе е значително помал:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">rect</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">convexhull</span><span class="p">)</span>
@@ -276,22 +276,22 @@
             <span class="n">indexes_triangles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="delaunay_example" src="delaunay_example.jpg" /></p>
+<p><img alt="delaunay_example" src="_images/delaunay_example.jpg" /></p>
 <p>Некои од вредностите во <strong>indexes_triangles</strong> се следните:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>[[36, 18, 37], [18, 36, 17], [7, 57, 8], ...]
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">36</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">37</span><span class="p">],</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">17</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Ова значи дека ќе имаме триаголници помеѓу точките <strong>36, 18, 37</strong>, потоа <strong>18, 36, 17</strong> и тн. од сликата:</p>
-<p><img alt="landmark2" src="landmark2.png" /></p>
+<p><img alt="landmark2" src="_images/landmark2.png" /></p>
 </li>
 <li><p>Истите триаголниците кои ги најдовме кај изворната слика ги применуваме и кај дестинациската:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> triangle_index <span class="k">in</span> indexes_triangles:
-    <span class="nv">pt1_2</span> <span class="o">=</span> landmarks_points2<span class="o">[</span>triangle_index<span class="o">[</span><span class="m">0</span><span class="o">]]</span>
-    <span class="nv">pt2_2</span> <span class="o">=</span> landmarks_points2<span class="o">[</span>triangle_index<span class="o">[</span><span class="m">1</span><span class="o">]]</span>
-    <span class="nv">pt3_2</span> <span class="o">=</span> landmarks_points2<span class="o">[</span>triangle_index<span class="o">[</span><span class="m">2</span><span class="o">]]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">triangle_index</span> <span class="ow">in</span> <span class="n">indexes_triangles</span><span class="p">:</span>
+    <span class="n">pt1_2</span> <span class="o">=</span> <span class="n">landmarks_points2</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">pt2_2</span> <span class="o">=</span> <span class="n">landmarks_points2</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">pt3_2</span> <span class="o">=</span> <span class="n">landmarks_points2</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
-<p><img alt="triangulation_example" src="triangulation_example.jpg" /></p>
+<p><img alt="triangulation_example" src="_images/triangulation_example.jpg" /></p>
 </li>
 <li><p>За секоја од двете слики извршуваме операциите над секој од соодветните триаголници:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">tr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pt1_1</span><span class="p">,</span> <span class="n">pt2_1</span><span class="p">,</span> <span class="n">pt3_1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
@@ -319,7 +319,7 @@
 </pre></div>
 </div>
 <p>Со помош на матрични трансформации, точките од првиот триаголник(делчето од сликата кое што сакаме да го пренесеме на новата слика) ги претвораме во точки од вториот триаголник(делчето од новата слика врз кое што пренесуваме). Потоа и самиот триаголник од првата слика, заедно со содржината негова, го трансформираме во новите вредности на точките, како и должината и ширината од триаголникот на втората слика. Со цел подобар квалитет при примена применуваме повторно <strong>bitwise_and</strong> операција со помош на маската на триаголникот од втората слика. Со помош на овие операции стигнавме до тука:</p>
-<p><img alt="new_face_with_problems" src="new_face_with_problems.jpg" /></p>
+<p><img alt="new_face_with_problems" src="_images/new_face_with_problems.jpg" /></p>
 <p>Забележуваме прогрес, но и проблем. Прогресот е дека користејќи ја следната линија код:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">img2_new_face</span><span class="p">[</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">warped_triangle</span>
 </pre></div>
@@ -332,7 +332,7 @@
 </pre></div>
 </div>
 <p>На овој начин делот врз кој се запишува, најпрвин се зачувува. Потоа, преку функцијата за додавање се спречува презапишување врз веќе ставените вредности(додавање на 0 значи останување на моменталната вредност):</p>
-<p><img alt="new_face_with_partial_solution" src="new_face_with_partial_solution.jpg" /></p>
+<p><img alt="new_face_with_partial_solution" src="_images/new_face_with_partial_solution.jpg" /></p>
 </li>
 <li><p>Со тоа ја имаме конечната вредност за лицето што треба да се смени. Со следниот код:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">convexhull2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convexHull</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">landmarks_points2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
@@ -343,13 +343,13 @@
 </pre></div>
 </div>
 <p>Ќе ги земеме надворешните од “landmark” точките на второто лице и со нивна помош ќе креираме маска на второто лице. Со помош на неколку операции ќе го земеме надворешниот дел од дестинациската слика, односно тој кој е надвор од надворешните “landmark” точки:</p>
-<p><img alt="dest_image_no_face" src="dest_image_no_face.jpg" /></p>
+<p><img alt="dest_image_no_face" src="_images/dest_image_no_face.jpg" /></p>
 </li>
 <li><p>Со помош на додавање на претходните два резултати го добиваме и крајниот исход:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">img2_head_noface</span><span class="p">,</span> <span class="n">img2_new_face</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="end_res1" src="end_res1.jpg" /></p>
+<p><img alt="end_res1" src="_images/end_res1.jpg" /></p>
 </li>
 <li><p>Со помош на функција која ја најдовме како идеја за подобрување на крајниот резултат добивме и подобрување на решението:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">convexhull2</span><span class="p">)</span>
@@ -365,9 +365,8 @@
 <li><p>координати со правоаголникот кој што ја обиколува позицијата каде што треба да е лицето</p></li>
 </ul>
 <p>Крајниот резултат од оваа примена е:</p>
-<p><img alt="end_res2" src="end_res2.jpg" /></p>
+<p><img alt="end_res2" src="_images/end_res2.jpg" /></p>
 </li>
-<li></li>
 </ul>
 </div>
 
