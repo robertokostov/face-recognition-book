@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Зошто? &#8212; Детекција на лица и замена на лице​</title>
+    <title>Deepfakes &#8212; Детекција на лица и замена на лице​</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,7 +52,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Како?" href="how.html" />
+    <link rel="next" title="Референци" href="lib.html" />
+    <link rel="prev" title="Чекори при извршување на програмата" href="steps.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -83,13 +84,13 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    Зошто?
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="how.html">
    Како?
@@ -105,8 +106,8 @@
    Чекори при извршување на програмата
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="usage.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Deepfakes
   </a>
  </li>
@@ -156,7 +157,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/usage.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -176,7 +177,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/robertokostov/face-recognition-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/robertokostov/face-recognition-book/issues/new?title=Issue%20on%20page%20%2Fusage.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -197,6 +198,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Што се deepfakes?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Како се прават?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Како да ги забележиме?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Дали deepfakes ќе донесат хаос?
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -205,10 +234,23 @@
         
               <div>
                 
-  <div class="section" id="id1">
-<h1>Зошто?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Повеќето од нас имаат користено или барем се имаат сретнато со филтрите кои овозможуваат замена на нашето лице со лицето на нашиот пријател, некоја славна личност, па дури и нашето милениче. Овие филтери се доста популарни на социјалните мрежи Instagram, Snapchat, Face App и овозможуваат манипулација со слики и видеа. Мораме да признаеме дека претставуваат навистина забавен додаток на социјалните мрежи и многумина ги обожаваат. Лесно е да се препуштиме на забавата кога веќе ни е сето ова овозможено. Дали некогаш сме се запрашале на кој начин всушност се постигнува тоа?</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="deepfakes">
+<h1>Deepfakes<a class="headerlink" href="#deepfakes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Што се deepfakes?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Дали можеби сте виделе Обама да го нарече Трамп “тотален идиот” или пак Марк Цукенберг како се фали дека има “целосна контрола врз украдени податоци од билиони луѓе”? Доколку одговорот е “да”, тогаш имате видено deepfake. Напредокот на Photoshop во 21-виот век доведе до користење облик на вештачка интелигенција наречена длабоко учење за изработка на слики од лажни настани, видеа и слично. Ова е одличен начин да глумите во вашиот омилен филм или да танцувате како професионалци. Фирмата AI детектирала 15 000 deepfake видеа онлајн во Септември 2019 и забележала дуплирање на 9 месеци. Технологијата на deepfake може да изработи доста убедливи а сосема непостоечни фиктивни слики од нула. Уште поинтересен факт е дека и гласовните пораки подлежат на deepfakes. Ваков случај се појавил во Велика Британија кога 200 000 фунти биле уплатени во Унгарска банка преку телефонски повик со користење на deepfake аудио.</p>
+</div>
+<div class="section" id="id2">
+<h2>Како се прават?<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Оваа технологија ги помести границите на возможното кога станува збор за манипулација со слики, видеа и глас. Самите deepfakes се појавуваат во 2017 кога Reddit корисник објавил видеа од познати личности на лажен настан. Процесот на нивната изработка се состои од неколку чекори. Најпрво се пуштаат илјадници слики од двете лица на алгоритам базиран на вештачка интелигенција(енкодер). Тој пронаоѓа и учи сличности помеѓу двете лица и ги сведува на нивните слични карактеристики, притоа компресирајќи ги самите слики. Втор алгоритам, наречен декодер, е научен да ги извлече лицата од компресираните слики. Се прави процесот на замена на лицата (кој го опишавме погоре). За да се постигне убедливо видео оваа реконструкција мора да се направи во секоја рамка. Друг начин да се направи deepfake е со користење на GAN (Generative Adversarial Network). Овој начин користи два алгоритми. Првиот е наречен генератор, кој слуша шум и го претвора во слика. Оваа слика се претвора во стрим од слики. Вториот е наречен дискриминатор, кој го прима стримот од слики. После повеќе циклуси и фидбек, генераторот почнува да произведува реалистични лица од комплетно непостоечки славни личности.</p>
+</div>
+<div class="section" id="id3">
+<h2>Како да ги забележиме?<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Како што напредува технологијата, нивното забележување е сè потешко и потешко. Во 2018 истражувачи откриле аномалија - лицата во deepfakes не трепкаат на нормален начин, па ова било начин да се препознае. Меѓутоа многу брзо откако било објавено истражувањето алгоритмите биле научени и на трепкање, па така се изгубил и тој начин на препознавање. Deepfakes со полош квалитет се многу поедноставни за забележување, бидејќи има грешки во движењето на усните, бојата на тенот, прамени од косата, накит, заби, чудни светли ефекти и рефлекции во ирисот.</p>
+</div>
+<div class="section" id="id4">
+<h2>Дали deepfakes ќе донесат хаос?<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Несомнено е дека можеме да очекуваме се повеќе deepfakes кои вознемируваат, заплашуваат и дестабилизираат одредени луѓе/организации. Главната цел на овие е да се направи zero-trust општество, во кое луѓето нема да можат да разликуваат вистина од лага. Кога вистината е компромитирана, кревањето сомнежи за одредени настани е прилично лесно. Голем број на владини организации, како и универзитети вложуваат многу во истражувања на оваа тема. Иронично, единственото решение можеби е самата вештачка интелигенција. Голем број фирми работат на детекциски системи, чија цел е да препознаат deepfake кога ќе налетаат на него.</p>
 </div>
 </div>
 
@@ -237,7 +279,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="how.html" title="next page">Како?</a>
+    <a class='left-prev' id="prev-link" href="steps.html" title="previous page">Чекори при извршување на програмата</a>
+    <a class='right-next' id="next-link" href="lib.html" title="next page">Референци</a>
 
         </div>
         

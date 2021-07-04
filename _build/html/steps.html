@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Програма &#8212; Детекција на лица и замена на лице​</title>
+    <title>Чекори при извршување на програмата &#8212; Детекција на лица и замена на лице​</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,8 +52,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Чекори при извршување на програмата" href="steps.html" />
-    <link rel="prev" title="Како?" href="how.html" />
+    <link rel="prev" title="Програма за детекција на лица и замена на лице" href="notebooks.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,24 +95,14 @@
    Како?
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Програма за детекција на лица и замена на лице
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Програма
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="steps.html">
    Чекори при извршување на програмата
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="usage.html">
-   Deepfakes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lib.html">
-   Референци
   </a>
  </li>
 </ul>
@@ -157,9 +146,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/notebooks.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/steps.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -177,7 +166,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/robertokostov/face-recognition-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/robertokostov/face-recognition-book/issues/new?title=Issue%20on%20page%20%2Fsteps.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -193,23 +182,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/robertokostov/face-recognition-book/master?urlpath=tree/docs/notebooks.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -224,93 +196,33 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>Програма<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Описот на целосната постапка е вклучен во Jupyter книгата, па коментари околу кодот во Notebook-от се одлучивме да не вклучуваме.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<h1>Чекори при извршување на програмата<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p>Импорт на сите потребни пакети:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">import</span> <span class="nn">dlib</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_41688</span><span class="o">/</span><span class="mf">2802406193.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">cv2</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">dlib</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;cv2&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extract_index_nparray</span><span class="p">(</span><span class="n">nparray</span><span class="p">):</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nparray</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-        <span class="n">index</span> <span class="o">=</span> <span class="n">num</span>
-        <span class="k">break</span>
-
-    <span class="k">return</span> <span class="n">index</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;media/736px-Josip_Broz_Tito_uniform_portrait.jpg&quot;</span><span class="p">)</span>
+</li>
+<li><p>Вчитување на двете слики, изворната и крајната, врз која ќе се врши замената на лицата и нивно претворање во сив формат:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">img1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;media/736px-Josip_Broz_Tito_uniform_portrait.jpg&quot;</span><span class="p">)</span>
 <span class="n">img2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;media/768px-Queen_Elizabeth_II_of_New_Zealand_(cropped).jpg&quot;</span><span class="p">)</span>
 
 <span class="n">img1_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
 <span class="n">img2_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img2</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
-
-<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">img1_gray</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget -nd https://github.com/JeffTrain/selfie/raw/master/shape_predictor_68_face_landmarks.dat
+</li>
+<li><p>Дефинирање на детекторот и предвидувачот користени за наоѓање на лица на дадена слика и модел за предвидување на 68 “landmark” точки на истите:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">detector</span> <span class="o">=</span> <span class="n">dlib</span><span class="o">.</span><span class="n">get_frontal_face_detector</span><span class="p">()</span>
+<span class="n">predictor</span> <span class="o">=</span> <span class="n">dlib</span><span class="o">.</span><span class="n">shape_predictor</span><span class="p">(</span><span class="s2">&quot;media/shape_predictor_68_face_landmarks.dat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2021-07-04 09:42:01--  https://github.com/JeffTrain/selfie/raw/master/shape_predictor_68_face_landmarks.dat
-Resolving github.com (github.com)... 140.82.114.4
-Connecting to github.com (github.com)|140.82.114.4|:443... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: https://raw.githubusercontent.com/JeffTrain/selfie/master/shape_predictor_68_face_landmarks.dat [following]
---2021-07-04 09:42:01--  https://raw.githubusercontent.com/JeffTrain/selfie/master/shape_predictor_68_face_landmarks.dat
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.109.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 99693937 (95M) [application/octet-stream]
-Saving to: ‘shape_predictor_68_face_landmarks.dat’
-
-shape_predictor_68_ 100%[===================&gt;]  95.08M   115MB/s    in 0.8s    
-
-2021-07-04 09:42:03 (115 MB/s) - ‘shape_predictor_68_face_landmarks.dat’ saved [99693937/99693937]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">detector</span> <span class="o">=</span> <span class="n">dlib</span><span class="o">.</span><span class="n">get_frontal_face_detector</span><span class="p">()</span>
-<span class="n">predictor</span> <span class="o">=</span> <span class="n">dlib</span><span class="o">.</span><span class="n">shape_predictor</span><span class="p">(</span><span class="s2">&quot;shape_predictor_68_face_landmarks.dat&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faces</span> <span class="o">=</span> <span class="n">detector</span><span class="p">(</span><span class="n">img1_gray</span><span class="p">)</span>
+<p><img alt="landmark" src="_images/landmark.jpg" /></p>
+</li>
+<li><p>Примена на истото кон изворната слика:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">faces</span> <span class="o">=</span> <span class="n">detector</span><span class="p">(</span><span class="n">img1_gray</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">:</span>
     <span class="n">landmarks</span> <span class="o">=</span> <span class="n">predictor</span><span class="p">(</span><span class="n">img1_gray</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
     <span class="n">landmarks_points1</span> <span class="o">=</span> <span class="p">[]</span>
@@ -318,12 +230,27 @@ shape_predictor_68_ 100%[===================&gt;]  95.08M   115MB/s    in 0.8s
         <span class="n">x</span> <span class="o">=</span> <span class="n">landmarks</span><span class="o">.</span><span class="n">part</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">x</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">landmarks</span><span class="o">.</span><span class="n">part</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">y</span>
         <span class="n">landmarks_points1</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
-
-    <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">landmarks_points1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="landmark-example" src="_images/landmark_example.jpg" /></p>
+</li>
+<li><p>Земање на надворешните “landmark” точки од сликата како релевантни за изборот на лицето:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">landmarks_points1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
     <span class="n">convexhull</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convexHull</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="convexhull_example" src="_images/convexhull_example.jpg" /></p>
+</li>
+<li><p>Со помош на надворешните “landmark” точки кои ги детектиравме креираме маска со чија помош го земаме делот што е внатре во полигонот дефиниран од истите точки како валиден:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">img1_gray</span><span class="p">)</span>
+<span class="o">...</span>
     <span class="n">cv2</span><span class="o">.</span><span class="n">fillConvexPoly</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">convexhull</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-
-    <span class="n">rect</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">convexhull</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="mask_example" src="_images/mask_example.jpg" /></p>
+</li>
+<li><p>Доколку го искористиме целото лице за директна замена, остануваме склони дека при некое движење на истото, насмевка или нешто друго, ќе се добие замена со послаб квалитет. Затоа, замената ќе ја донесеме на ниво на “landmark” точките и методата на триангулација на “Delaunay”. Помеѓу секои три најблиски од нив ќе нацртаме триаголници и замената ќе ја правиме помеѓу нив соодветно. Па така, доколку лицето за замена малку се помрдне, или се насмее, делот од сликата кој ќе биде афектиран од тоа ќе е значително помал:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">rect</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">convexhull</span><span class="p">)</span>
     <span class="n">subdiv</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Subdiv2D</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
     <span class="n">subdiv</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">landmarks_points1</span><span class="p">)</span>
     <span class="n">triangles</span> <span class="o">=</span> <span class="n">subdiv</span><span class="o">.</span><span class="n">getTriangleList</span><span class="p">()</span>
@@ -349,32 +276,25 @@ shape_predictor_68_ 100%[===================&gt;]  95.08M   115MB/s    in 0.8s
             <span class="n">indexes_triangles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faces2</span> <span class="o">=</span> <span class="n">detector</span><span class="p">(</span><span class="n">img2_gray</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces2</span><span class="p">:</span>
-    <span class="n">landmarks</span> <span class="o">=</span> <span class="n">predictor</span><span class="p">(</span><span class="n">img2_gray</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
-    <span class="n">landmarks_points2</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">68</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">landmarks</span><span class="o">.</span><span class="n">part</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">x</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">landmarks</span><span class="o">.</span><span class="n">part</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">y</span>
-        <span class="n">landmarks_points2</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<p><img alt="delaunay_example" src="_images/delaunay_example.jpg" /></p>
+<p>Некои од вредностите во <strong>indexes_triangles</strong> се следните:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">36</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">37</span><span class="p">],</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">17</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
+<p>Ова значи дека ќе имаме триаголници помеѓу точките <strong>36, 18, 37</strong>, потоа <strong>18, 36, 17</strong> и тн. од сликата:</p>
+<p><img alt="landmark2" src="_images/landmark2.png" /></p>
+</li>
+<li><p>Истите триаголниците кои ги најдовме кај изворната слика ги применуваме и кај дестинациската:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">triangle_index</span> <span class="ow">in</span> <span class="n">indexes_triangles</span><span class="p">:</span>
+    <span class="n">pt1_2</span> <span class="o">=</span> <span class="n">landmarks_points2</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">pt2_2</span> <span class="o">=</span> <span class="n">landmarks_points2</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">pt3_2</span> <span class="o">=</span> <span class="n">landmarks_points2</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+</pre></div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img2_new_face</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">triangle_index</span> <span class="ow">in</span> <span class="n">indexes_triangles</span><span class="p">:</span>
-    <span class="n">pt1_1</span> <span class="o">=</span> <span class="n">landmarks_points1</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-    <span class="n">pt2_1</span> <span class="o">=</span> <span class="n">landmarks_points1</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-    <span class="n">pt3_1</span> <span class="o">=</span> <span class="n">landmarks_points1</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
-
-    <span class="n">tr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pt1_1</span><span class="p">,</span> <span class="n">pt2_1</span><span class="p">,</span> <span class="n">pt3_1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<p><img alt="triangulation_example" src="_images/triangulation_example.jpg" /></p>
+</li>
+<li><p>За секоја од двете слики извршуваме операциите над секој од соодветните триаголници:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">tr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pt1_1</span><span class="p">,</span> <span class="n">pt2_1</span><span class="p">,</span> <span class="n">pt3_1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
     <span class="n">rect1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">tr1</span><span class="p">)</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">rect1</span>
     <span class="n">cropped_triangle1</span> <span class="o">=</span> <span class="n">img1</span><span class="p">[</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">]</span>
@@ -384,75 +304,70 @@ shape_predictor_68_ 100%[===================&gt;]  95.08M   115MB/s    in 0.8s
                        <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
     <span class="n">cv2</span><span class="o">.</span><span class="n">fillConvexPoly</span><span class="p">(</span><span class="n">cropped_tr1_mask</span><span class="p">,</span> <span class="n">points1</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
     <span class="n">cropped_triangle1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">cropped_triangle1</span><span class="p">,</span> <span class="n">cropped_triangle1</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">cropped_tr1_mask</span><span class="p">)</span>
-
-    <span class="n">pt1_2</span> <span class="o">=</span> <span class="n">landmarks_points2</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-    <span class="n">pt2_2</span> <span class="o">=</span> <span class="n">landmarks_points2</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-    <span class="n">pt3_2</span> <span class="o">=</span> <span class="n">landmarks_points2</span><span class="p">[</span><span class="n">triangle_index</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
-
-    <span class="n">tr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pt1_2</span><span class="p">,</span> <span class="n">pt2_2</span><span class="p">,</span> <span class="n">pt3_2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-    <span class="n">rect2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">tr2</span><span class="p">)</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">rect2</span>
-    <span class="n">cropped_triangle2</span> <span class="o">=</span> <span class="n">img2</span><span class="p">[</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">]</span>
-    <span class="n">cropped_tr2_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-
-    <span class="n">points2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">pt1_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">pt1_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">],</span> <span class="p">[</span><span class="n">pt2_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">pt2_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">],</span> <span class="p">[</span><span class="n">pt3_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">pt3_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">]],</span>
-                       <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-    <span class="n">cv2</span><span class="o">.</span><span class="n">fillConvexPoly</span><span class="p">(</span><span class="n">cropped_tr2_mask</span><span class="p">,</span> <span class="n">points2</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-    <span class="n">cropped_triangle2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">cropped_triangle2</span><span class="p">,</span> <span class="n">cropped_triangle2</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">cropped_tr2_mask</span><span class="p">)</span>
-
-    <span class="n">points1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">points1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Со помош на трите точки од триаголникот, дефинираме правоаголник над него со соодветни x и y координати на една точка, должина и ширина како вредности. Тој правоаголник го опфаќа делот од внатре од триаголникот, но и тој надвор од него. За да се отстрани тој креираме маска со должина и ширина иста како неговата. Со помош на <strong>fillConvexPoly</strong> функцијата делот од маската кој е опфатен од триаголникот ќе го обоиме бел(вредноста 255), делот кој не е ќе си остане како што беше и кога го креиравме, црн. Кога маската ќе ја примениме на делот земен од изворната слика со помош на <strong>bitwise_and</strong> операцијата, го добиваме само делот од триаголникот кој ни треба, бидејќи црно(0) <strong>bitwise_and</strong> вредноста од сликата прави тој дел од сликата да стане црн, а со обоениот дел од маската сликата ќе си ја задржи бојата.</p>
+</li>
+<li><p>Откако ги добиеме “чисти” секој од соодветните триаголници кои ќе ги смениме, применуваме дополнителни трансформации:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">points1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">points1</span><span class="p">)</span>
     <span class="n">points2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">points2</span><span class="p">)</span>
 
     <span class="n">M</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getAffineTransform</span><span class="p">(</span><span class="n">points1</span><span class="p">,</span> <span class="n">points2</span><span class="p">)</span>
 
     <span class="n">warped_triangle</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpAffine</span><span class="p">(</span><span class="n">cropped_triangle1</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
     <span class="n">warped_triangle</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">warped_triangle</span><span class="p">,</span> <span class="n">warped_triangle</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">cropped_tr2_mask</span><span class="p">)</span>
-
-    <span class="n">img2_new_face_rect_area</span> <span class="o">=</span> <span class="n">img2_new_face</span><span class="p">[</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">]</span>
-    <span class="n">img2_new_face_rect_area_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img2_new_face_rect_area</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
-
-    <span class="c1"># _, mask_triangles_designed = cv2.threshold(img2_new_face_rect_area_gray, 64, 255, cv2.THRESH_BINARY_INV)</span>
-    <span class="c1"># warped_triangle = cv2.bitwise_and(warped_triangle, warped_triangle, mask=mask_triangles_designed)</span>
+</pre></div>
+</div>
+<p>Со помош на матрични трансформации, точките од првиот триаголник(делчето од сликата кое што сакаме да го пренесеме на новата слика) ги претвораме во точки од вториот триаголник(делчето од новата слика врз кое што пренесуваме). Потоа и самиот триаголник од првата слика, заедно со содржината негова, го трансформираме во новите вредности на точките, како и должината и ширината од триаголникот на втората слика. Со цел подобар квалитет при примена применуваме повторно <strong>bitwise_and</strong> операција со помош на маската на триаголникот од втората слика. Со помош на овие операции стигнавме до тука:</p>
+<p><img alt="new_face_with_problems" src="_images/new_face_with_problems.jpg" /></p>
+<p>Забележуваме прогрес, но и проблем. Прогресот е дека користејќи ја следната линија код:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">img2_new_face</span><span class="p">[</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">warped_triangle</span>
+</pre></div>
+</div>
+<p>Си го пребришуваме прогресот. Еден триаголник ќе се запише добро, соседниот има црни делови поради маската околу него, па ќе го пребрише. Решението го пронајдовме со користење на вградената функција <strong>add</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">img2_new_face_rect_area</span> <span class="o">=</span> <span class="n">img2_new_face</span><span class="p">[</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">]</span>
 
     <span class="n">img2_new_face_rect_area</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">img2_new_face_rect_area</span><span class="p">,</span> <span class="n">warped_triangle</span><span class="p">)</span>
     <span class="n">img2_new_face</span><span class="p">[</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">img2_new_face_rect_area</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">convexhull2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convexHull</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">landmarks_points2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
+<p>На овој начин делот врз кој се запишува, најпрвин се зачувува. Потоа, преку функцијата за додавање се спречува презапишување врз веќе ставените вредности(додавање на 0 значи останување на моменталната вредност):</p>
+<p><img alt="new_face_with_partial_solution" src="_images/new_face_with_partial_solution.jpg" /></p>
+</li>
+<li><p>Со тоа ја имаме конечната вредност за лицето што треба да се смени. Со следниот код:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">convexhull2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convexHull</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">landmarks_points2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
 <span class="n">img2_face_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">img2_gray</span><span class="p">)</span>
 <span class="n">img2_head_mask</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">fillConvexPoly</span><span class="p">(</span><span class="n">img2_face_mask</span><span class="p">,</span> <span class="n">convexhull2</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-
 <span class="n">img2_face_mask</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_not</span><span class="p">(</span><span class="n">img2_head_mask</span><span class="p">)</span>
 <span class="n">img2_head_noface</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">img2</span><span class="p">,</span> <span class="n">img2</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">img2_face_mask</span><span class="p">)</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">img2_head_noface</span><span class="p">,</span> <span class="n">img2_new_face</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Ќе ги земеме надворешните од “landmark” точките на второто лице и со нивна помош ќе креираме маска на второто лице. Со помош на неколку операции ќе го земеме надворешниот дел од дестинациската слика, односно тој кој е надвор од надворешните “landmark” точки:</p>
+<p><img alt="dest_image_no_face" src="_images/dest_image_no_face.jpg" /></p>
+</li>
+<li><p>Со помош на додавање на претходните два резултати го добиваме и крајниот исход:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">img2_head_noface</span><span class="p">,</span> <span class="n">img2_new_face</span><span class="p">)</span>
+</pre></div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">convexhull2</span><span class="p">)</span>
+<p><img alt="end_res1" src="_images/end_res1.jpg" /></p>
+</li>
+<li><p>Со помош на функција која ја најдовме како идеја за подобрување на крајниот резултат добивме и подобрување на решението:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">convexhull2</span><span class="p">)</span>
 <span class="n">center_face2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">((</span><span class="n">y</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">seamlessclone</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">seamlessClone</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">img2</span><span class="p">,</span> <span class="n">img2_head_mask</span><span class="p">,</span> <span class="n">center_face2</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">MIXED_CLONE</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;End result&quot;</span><span class="p">,</span> <span class="n">seamlessclone</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/notebooks_12_0.png" src="_images/notebooks_12_0.png" />
-</div>
-</div>
+<p>Функцијата како аргументи прима:</p>
+<ul class="simple">
+<li><p>лицето кое треба да се преслика</p></li>
+<li><p>дестинациската слика за пресликување</p></li>
+<li><p>маската со позицијата каде што треба да е лицето</p></li>
+<li><p>координати со правоаголникот кој што ја обиколува позицијата каде што треба да е лицето</p></li>
+</ul>
+<p>Крајниот резултат од оваа примена е:</p>
+<p><img alt="end_res2" src="_images/end_res2.jpg" /></p>
+</li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
@@ -480,8 +395,7 @@ shape_predictor_68_ 100%[===================&gt;]  95.08M   115MB/s    in 0.8s
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="how.html" title="previous page">Како?</a>
-    <a class='right-next' id="next-link" href="steps.html" title="next page">Чекори при извршување на програмата</a>
+    <a class='left-prev' id="prev-link" href="notebooks.html" title="previous page">Програма за детекција на лица и замена на лице</a>
 
         </div>
         
