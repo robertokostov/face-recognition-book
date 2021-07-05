@@ -116,11 +116,6 @@
    Референци
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tmp.html">
-   Content with notebooks
-  </a>
- </li>
 </ul>
 
     </div>
@@ -274,18 +269,18 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget -nd https://github.com/JeffTrain/selfie/raw/master/shape_predictor_68_face_landmarks.dat
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget -nd https://github.com/JeffTrain/selfie/raw/master/shape_predictor_68_face_landmarks.dat<span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2021-07-05 01:52:03--  https://github.com/JeffTrain/selfie/raw/master/shape_predictor_68_face_landmarks.dat
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2021-07-05 02:00:48--  https://github.com/JeffTrain/selfie/raw/master/shape_predictor_68_face_landmarks.dat
 Loaded CA certificate &#39;/etc/ssl/certs/ca-certificates.crt&#39;
-Resolving github.com (github.com)... 
+Resolving github.com (github.com)... 140.82.121.3
+Connecting to github.com (github.com)|140.82.121.3|:443... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140.82.121.4
-Connecting to github.com (github.com)|140.82.121.4|:443... connected.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
@@ -293,9 +288,9 @@ Connecting to github.com (github.com)|140.82.121.4|:443... connected.
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>302 Found
 Location: https://raw.githubusercontent.com/JeffTrain/selfie/master/shape_predictor_68_face_landmarks.dat [following]
---2021-07-05 01:52:03--  https://raw.githubusercontent.com/JeffTrain/selfie/master/shape_predictor_68_face_landmarks.dat
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... 
+--2021-07-05 02:00:48--  https://raw.githubusercontent.com/JeffTrain/selfie/master/shape_predictor_68_face_landmarks.dat
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.110.133, 185.199.111.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
@@ -306,303 +301,297 @@ Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 99693937 (95M) [application/octet-stream]
-Saving to: &#39;shape_predictor_68_face_landmarks.dat.1&#39;
+Saving to: &#39;shape_predictor_68_face_landmarks.dat.3&#39;
 
 
           shape_pre   0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         shape_pred   0%[                    ] 699.00K  3.28MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         shape_pred   0%[                    ] 731.00K  3.49MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        shape_predi   1%[                    ]   1.74M  4.26MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        shape_predi   1%[                    ]   1.51M  3.70MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       shape_predic   2%[                    ]   2.78M  4.54MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       shape_predic   2%[                    ]   2.43M  3.86MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      shape_predict   3%[                    ]   3.76M  3.54MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      shape_predict   3%[                    ]   3.59M  4.29MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     shape_predicto   5%[&gt;                   ]   4.99M  3.95MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     shape_predicto   5%[&gt;                   ]   4.79M  4.62MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    shape_predictor   6%[&gt;                   ]   6.04M  4.12MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    shape_predictor   6%[&gt;                   ]   6.06M  4.88MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   shape_predictor_   7%[&gt;                   ]   7.04M  4.22MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   shape_predictor_   7%[&gt;                   ]   7.31M  5.05MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  shape_predictor_6   8%[&gt;                   ]   8.03M  4.29MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  shape_predictor_6   9%[&gt;                   ]   8.70M  5.24MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> shape_predictor_68   9%[&gt;                   ]   9.03M  4.35MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> shape_predictor_68  10%[=&gt;                  ]   9.93M  5.34MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shape_predictor_68_  10%[=&gt;                  ]   9.99M  4.39MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shape_predictor_68_  11%[=&gt;                  ]  11.31M  5.49MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hape_predictor_68_f  11%[=&gt;                  ]  10.99M  4.43MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hape_predictor_68_f  13%[=&gt;                  ]  12.67M  5.59MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ape_predictor_68_fa  12%[=&gt;                  ]  11.98M  4.46MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ape_predictor_68_fa  14%[=&gt;                  ]  14.04M  5.68MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pe_predictor_68_fac  13%[=&gt;                  ]  12.99M  4.50MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pe_predictor_68_fac  16%[==&gt;                 ]  15.35M  5.74MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e_predictor_68_face  14%[=&gt;                  ]  13.98M  4.53MB/s    eta 18s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e_predictor_68_face  17%[==&gt;                 ]  16.68M  5.80MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_predictor_68_face_  15%[==&gt;                 ]  14.98M  4.56MB/s    eta 18s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_predictor_68_face_  18%[==&gt;                 ]  17.96M  5.84MB/s    eta 13s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predictor_68_face_l  16%[==&gt;                 ]  15.96M  4.65MB/s    eta 18s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predictor_68_face_l  20%[===&gt;                ]  19.20M  6.01MB/s    eta 13s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>redictor_68_face_la  17%[==&gt;                 ]  16.96M  4.62MB/s    eta 18s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>redictor_68_face_la  21%[===&gt;                ]  20.24M  6.03MB/s    eta 13s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>edictor_68_face_lan  18%[==&gt;                 ]  17.95M  4.63MB/s    eta 18s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>edictor_68_face_lan  22%[===&gt;                ]  21.31M  6.04MB/s    eta 13s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dictor_68_face_land  19%[==&gt;                 ]  18.95M  4.63MB/s    eta 16s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dictor_68_face_land  23%[===&gt;                ]  22.46M  6.12MB/s    eta 13s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ictor_68_face_landm  20%[===&gt;                ]  19.93M  4.89MB/s    eta 16s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ictor_68_face_landm  25%[====&gt;               ]  23.78M  6.21MB/s    eta 12s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ctor_68_face_landma  22%[===&gt;                ]  20.93M  4.91MB/s    eta 16s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ctor_68_face_landma  26%[====&gt;               ]  24.92M  6.14MB/s    eta 12s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tor_68_face_landmar  23%[===&gt;                ]  21.92M  4.90MB/s    eta 16s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tor_68_face_landmar  27%[====&gt;               ]  25.88M  6.09MB/s    eta 12s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>or_68_face_landmark  24%[===&gt;                ]  22.84M  4.87MB/s    eta 16s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>or_68_face_landmark  28%[====&gt;               ]  26.87M  5.96MB/s    eta 12s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r_68_face_landmarks  25%[====&gt;               ]  23.85M  4.87MB/s    eta 15s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r_68_face_landmarks  29%[====&gt;               ]  27.84M  5.88MB/s    eta 12s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_68_face_landmarks.  26%[====&gt;               ]  24.87M  4.86MB/s    eta 15s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_68_face_landmarks.  30%[=====&gt;              ]  28.85M  5.80MB/s    eta 12s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68_face_landmarks.d  27%[====&gt;               ]  25.92M  4.88MB/s    eta 15s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68_face_landmarks.d  31%[=====&gt;              ]  29.85M  5.64MB/s    eta 12s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8_face_landmarks.da  28%[====&gt;               ]  26.92M  4.87MB/s    eta 15s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8_face_landmarks.da  32%[=====&gt;              ]  30.84M  5.57MB/s    eta 12s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_face_landmarks.dat  29%[====&gt;               ]  27.88M  4.85MB/s    eta 15s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_face_landmarks.dat  33%[=====&gt;              ]  31.84M  5.46MB/s    eta 12s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face_landmarks.dat.  30%[=====&gt;              ]  28.96M  4.89MB/s    eta 14s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face_landmarks.dat.  34%[=====&gt;              ]  32.82M  5.30MB/s    eta 12s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ace_landmarks.dat.1  31%[=====&gt;              ]  29.90M  4.87MB/s    eta 14s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ace_landmarks.dat.3  35%[======&gt;             ]  33.82M  5.23MB/s    eta 11s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ce_landmarks.dat.1   32%[=====&gt;              ]  30.90M  4.87MB/s    eta 14s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ce_landmarks.dat.3   36%[======&gt;             ]  34.81M  5.15MB/s    eta 11s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e_landmarks.dat.1    33%[=====&gt;              ]  31.87M  4.86MB/s    eta 14s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e_landmarks.dat.3    37%[======&gt;             ]  35.79M  5.09MB/s    eta 11s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_landmarks.dat.1     34%[=====&gt;              ]  32.81M  4.84MB/s    eta 14s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_landmarks.dat.3     38%[======&gt;             ]  36.78M  5.06MB/s    eta 11s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>landmarks.dat.1      35%[======&gt;             ]  33.81M  4.85MB/s    eta 13s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>landmarks.dat.3      39%[======&gt;             ]  37.76M  5.03MB/s    eta 11s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>andmarks.dat.1       36%[======&gt;             ]  34.82M  4.86MB/s    eta 13s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>andmarks.dat.3       40%[=======&gt;            ]  38.73M  4.95MB/s    eta 10s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ndmarks.dat.1        37%[======&gt;             ]  35.81M  4.86MB/s    eta 13s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ndmarks.dat.3        41%[=======&gt;            ]  39.68M  4.86MB/s    eta 10s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dmarks.dat.1         38%[======&gt;             ]  36.82M  4.86MB/s    eta 13s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dmarks.dat.3         42%[=======&gt;            ]  40.68M  4.87MB/s    eta 10s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>marks.dat.1          39%[======&gt;             ]  37.78M  4.84MB/s    eta 13s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>marks.dat.3          43%[=======&gt;            ]  41.63M  4.87MB/s    eta 10s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arks.dat.1           40%[=======&gt;            ]  38.79M  4.85MB/s    eta 12s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arks.dat.3           44%[=======&gt;            ]  42.57M  4.85MB/s    eta 10s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rks.dat.1            41%[=======&gt;            ]  39.76M  4.84MB/s    eta 12s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rks.dat.3            45%[========&gt;           ]  43.57M  4.86MB/s    eta 10s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ks.dat.1             42%[=======&gt;            ]  40.73M  4.82MB/s    eta 12s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ks.dat.3             46%[========&gt;           ]  44.56M  4.85MB/s    eta 10s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s.dat.1              43%[=======&gt;            ]  41.71M  4.85MB/s    eta 12s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s.dat.3              47%[========&gt;           ]  45.56M  4.86MB/s    eta 10s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.dat.1               44%[=======&gt;            ]  42.63M  4.83MB/s    eta 12s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.dat.3               48%[========&gt;           ]  46.53M  4.85MB/s    eta 10s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dat.1                45%[========&gt;           ]  43.60M  4.80MB/s    eta 11s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dat.3                49%[========&gt;           ]  47.51M  4.85MB/s    eta 10s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>at.1                 46%[========&gt;           ]  44.60M  4.81MB/s    eta 11s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>at.3                 51%[=========&gt;          ]  48.53M  4.85MB/s    eta 9s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t.1                  47%[========&gt;           ]  45.54M  4.81MB/s    eta 11s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t.3                  52%[=========&gt;          ]  49.54M  4.86MB/s    eta 9s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.1                   48%[========&gt;           ]  46.51M  4.81MB/s    eta 11s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.3                   53%[=========&gt;          ]  50.57M  4.89MB/s    eta 9s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1                    49%[========&gt;           ]  47.45M  4.80MB/s    eta 11s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3                    54%[=========&gt;          ]  51.62M  4.90MB/s    eta 9s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                     50%[=========&gt;          ]  48.42M  4.80MB/s    eta 10s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                     55%[==========&gt;         ]  52.59M  4.90MB/s    eta 9s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                  s  51%[=========&gt;          ]  49.38M  4.78MB/s    eta 10s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                  s  56%[==========&gt;         ]  53.60M  4.76MB/s    eta 8s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 sh  52%[=========&gt;          ]  50.38M  4.78MB/s    eta 10s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 sh  56%[==========&gt;         ]  53.88M  4.54MB/s    eta 8s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                sha  54%[=========&gt;          ]  51.37M  4.78MB/s    eta 10s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                sha  57%[==========&gt;         ]  54.92M  4.56MB/s    eta 8s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               shap  55%[==========&gt;         ]  52.34M  4.77MB/s    eta 10s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               shap  58%[==========&gt;         ]  55.92M  4.55MB/s    eta 8s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              shape  56%[==========&gt;         ]  53.34M  4.80MB/s    eta 9s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              shape  59%[==========&gt;         ]  56.95M  4.58MB/s    eta 8s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             shape_  57%[==========&gt;         ]  54.29M  4.79MB/s    eta 9s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             shape_  60%[===========&gt;        ]  57.96M  4.60MB/s    eta 7s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            shape_p  58%[==========&gt;         ]  55.28M  4.79MB/s    eta 9s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            shape_p  62%[===========&gt;        ]  58.98M  4.60MB/s    eta 7s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           shape_pr  59%[==========&gt;         ]  56.28M  4.79MB/s    eta 9s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           shape_pr  63%[===========&gt;        ]  59.96M  4.60MB/s    eta 7s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          shape_pre  60%[===========&gt;        ]  57.24M  4.79MB/s    eta 9s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          shape_pre  63%[===========&gt;        ]  60.82M  4.56MB/s    eta 7s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         shape_pred  61%[===========&gt;        ]  58.23M  4.82MB/s    eta 8s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         shape_pred  64%[===========&gt;        ]  61.68M  4.52MB/s    eta 7s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        shape_predi  62%[===========&gt;        ]  59.23M  4.81MB/s    eta 8s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        shape_predi  65%[============&gt;       ]  62.56M  4.49MB/s    eta 6s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       shape_predic  63%[===========&gt;        ]  60.21M  4.82MB/s    eta 8s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       shape_predic  66%[============&gt;       ]  63.32M  4.41MB/s    eta 6s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      shape_predict  64%[===========&gt;        ]  61.21M  4.83MB/s    eta 8s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      shape_predict  67%[============&gt;       ]  64.18M  4.34MB/s    eta 6s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     shape_predicto  65%[============&gt;       ]  62.13M  4.81MB/s    eta 8s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     shape_predicto  68%[============&gt;       ]  64.98M  4.28MB/s    eta 6s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    shape_predictor  66%[============&gt;       ]  63.13M  4.85MB/s    eta 7s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    shape_predictor  69%[============&gt;       ]  65.87M  4.24MB/s    eta 6s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   shape_predictor_  67%[============&gt;       ]  64.07M  4.83MB/s    eta 7s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   shape_predictor_  70%[=============&gt;      ]  66.87M  4.22MB/s    eta 6s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  shape_predictor_6  68%[============&gt;       ]  65.07M  4.83MB/s    eta 7s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  shape_predictor_6  71%[=============&gt;      ]  67.60M  4.46MB/s    eta 6s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> shape_predictor_68  69%[============&gt;       ]  65.98M  4.79MB/s    eta 7s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> shape_predictor_68  72%[=============&gt;      ]  68.53M  4.51MB/s    eta 6s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shape_predictor_68_  70%[=============&gt;      ]  66.98M  4.81MB/s    eta 7s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shape_predictor_68_  72%[=============&gt;      ]  69.31M  4.40MB/s    eta 6s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hape_predictor_68_f  71%[=============&gt;      ]  67.87M  4.78MB/s    eta 6s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hape_predictor_68_f  73%[=============&gt;      ]  70.31M  4.39MB/s    eta 6s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ape_predictor_68_fa  72%[=============&gt;      ]  68.84M  4.78MB/s    eta 6s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ape_predictor_68_fa  75%[==============&gt;     ]  71.31M  4.39MB/s    eta 5s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pe_predictor_68_fac  73%[=============&gt;      ]  69.81M  4.78MB/s    eta 6s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pe_predictor_68_fac  76%[==============&gt;     ]  72.34M  4.38MB/s    eta 5s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e_predictor_68_face  74%[=============&gt;      ]  70.81M  4.77MB/s    eta 6s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e_predictor_68_face  77%[==============&gt;     ]  73.34M  4.39MB/s    eta 5s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_predictor_68_face_  75%[==============&gt;     ]  71.76M  4.78MB/s    eta 6s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_predictor_68_face_  78%[==============&gt;     ]  74.37M  4.41MB/s    eta 5s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predictor_68_face_l  76%[==============&gt;     ]  72.76M  4.79MB/s    eta 5s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>predictor_68_face_l  79%[==============&gt;     ]  75.37M  4.45MB/s    eta 5s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>redictor_68_face_la  77%[==============&gt;     ]  73.74M  4.79MB/s    eta 5s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>redictor_68_face_la  80%[===============&gt;    ]  76.24M  4.47MB/s    eta 4s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>edictor_68_face_lan  78%[==============&gt;     ]  74.73M  4.79MB/s    eta 5s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>edictor_68_face_lan  81%[===============&gt;    ]  77.13M  4.48MB/s    eta 4s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dictor_68_face_land  79%[==============&gt;     ]  75.71M  4.79MB/s    eta 5s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dictor_68_face_land  82%[===============&gt;    ]  78.01M  4.50MB/s    eta 4s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ictor_68_face_landm  80%[===============&gt;    ]  76.68M  4.79MB/s    eta 5s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ictor_68_face_landm  83%[===============&gt;    ]  79.03M  4.58MB/s    eta 4s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ctor_68_face_landma  81%[===============&gt;    ]  77.65M  4.79MB/s    eta 4s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ctor_68_face_landma  84%[===============&gt;    ]  80.03M  4.61MB/s    eta 4s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tor_68_face_landmar  82%[===============&gt;    ]  78.59M  4.79MB/s    eta 4s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tor_68_face_landmar  85%[================&gt;   ]  80.99M  4.63MB/s    eta 3s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>or_68_face_landmark  83%[===============&gt;    ]  79.51M  4.76MB/s    eta 4s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>or_68_face_landmark  86%[================&gt;   ]  81.98M  4.67MB/s    eta 3s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r_68_face_landmarks  84%[===============&gt;    ]  80.49M  4.77MB/s    eta 4s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r_68_face_landmarks  87%[================&gt;   ]  82.95M  4.71MB/s    eta 3s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_68_face_landmarks.  85%[================&gt;   ]  81.45M  4.77MB/s    eta 4s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_68_face_landmarks.  88%[================&gt;   ]  83.92M  4.80MB/s    eta 3s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68_face_landmarks.d  86%[================&gt;   ]  82.45M  4.79MB/s    eta 3s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68_face_landmarks.d  89%[================&gt;   ]  84.90M  4.81MB/s    eta 3s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8_face_landmarks.da  87%[================&gt;   ]  83.38M  4.80MB/s    eta 3s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8_face_landmarks.da  90%[=================&gt;  ]  85.88M  4.82MB/s    eta 2s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_face_landmarks.dat  88%[================&gt;   ]  84.35M  4.80MB/s    eta 3s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_face_landmarks.dat  91%[=================&gt;  ]  86.88M  4.80MB/s    eta 2s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face_landmarks.dat.  89%[================&gt;   ]  85.35M  4.80MB/s    eta 3s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>face_landmarks.dat.  92%[=================&gt;  ]  87.85M  4.80MB/s    eta 2s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ace_landmarks.dat.1  90%[=================&gt;  ]  86.32M  4.81MB/s    eta 3s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ace_landmarks.dat.3  93%[=================&gt;  ]  88.84M  4.80MB/s    eta 2s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ce_landmarks.dat.1   91%[=================&gt;  ]  87.31M  4.81MB/s    eta 2s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ce_landmarks.dat.3   94%[=================&gt;  ]  89.82M  4.76MB/s    eta 2s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e_landmarks.dat.1    92%[=================&gt;  ]  88.31M  4.81MB/s    eta 2s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e_landmarks.dat.3    95%[==================&gt; ]  90.82M  4.77MB/s    eta 1s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_landmarks.dat.1     93%[=================&gt;  ]  89.28M  4.81MB/s    eta 2s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_landmarks.dat.3     96%[==================&gt; ]  91.81M  4.79MB/s    eta 1s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>landmarks.dat.1      94%[=================&gt;  ]  90.24M  4.81MB/s    eta 2s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>landmarks.dat.3      97%[==================&gt; ]  92.81M  4.87MB/s    eta 1s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>andmarks.dat.1       95%[==================&gt; ]  91.23M  4.81MB/s    eta 2s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>andmarks.dat.3       98%[==================&gt; ]  93.81M  4.86MB/s    eta 1s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ndmarks.dat.1        96%[==================&gt; ]  92.20M  4.83MB/s    eta 1s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ndmarks.dat.3        99%[==================&gt; ]  94.79M  4.88MB/s    eta 1s     
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dmarks.dat.1         98%[==================&gt; ]  93.18M  4.82MB/s    eta 1s     
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>marks.dat.1          99%[==================&gt; ]  94.20M  4.83MB/s    eta 1s     
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shape_predictor_68_ 100%[===================&gt;]  95.08M  4.85MB/s    in 20s     
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shape_predictor_68_ 100%[===================&gt;]  95.08M  4.88MB/s    in 19s     
 
-2021-07-05 01:52:23 (4.78 MB/s) - &#39;shape_predictor_68_face_landmarks.dat.1&#39; saved [99693937/99693937]
+2021-07-05 02:01:08 (4.94 MB/s) - &#39;shape_predictor_68_face_landmarks.dat.3&#39; saved [99693937/99693937]
 </pre></div>
 </div>
 </div>
