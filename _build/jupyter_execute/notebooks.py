@@ -13,7 +13,7 @@ import dlib
 import numpy as np
 
 
-# In[ ]:
+# In[2]:
 
 
 def extract_index_nparray(nparray):
@@ -26,7 +26,7 @@ def extract_index_nparray(nparray):
     return index
 
 
-# In[ ]:
+# In[3]:
 
 
 img1 = cv2.imread("media/736px-Josip_Broz_Tito_uniform_portrait.jpg")
@@ -38,20 +38,20 @@ img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 mask = np.zeros_like(img1_gray)
 
 
-# In[ ]:
+# In[4]:
 
 
-get_ipython().system('wget -nd https://github.com/JeffTrain/selfie/raw/master/shape_predictor_68_face_landmarks.dat')
+get_ipython().system('wget -nd https://github.com/JeffTrain/selfie/raw/master/shape_predictor_68_face_landmarks.dat;')
 
 
-# In[ ]:
+# In[5]:
 
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 
-# In[ ]:
+# In[6]:
 
 
 faces = detector(img1_gray)
@@ -93,7 +93,7 @@ for face in faces:
             indexes_triangles.append(triangle)
 
 
-# In[ ]:
+# In[7]:
 
 
 faces2 = detector(img2_gray)
@@ -106,7 +106,7 @@ for face in faces2:
         landmarks_points2.append((x, y))
 
 
-# In[ ]:
+# In[8]:
 
 
 img2_new_face = np.zeros((1024, 768, 3), np.uint8)
@@ -160,7 +160,7 @@ for triangle_index in indexes_triangles:
     img2_new_face[y: y + h, x: x + w] = img2_new_face_rect_area
 
 
-# In[ ]:
+# In[9]:
 
 
 convexhull2 = cv2.convexHull(np.array(landmarks_points2, np.int32))
@@ -173,7 +173,7 @@ img2_head_noface = cv2.bitwise_and(img2, img2, mask=img2_face_mask)
 result = cv2.add(img2_head_noface, img2_new_face)
 
 
-# In[ ]:
+# In[10]:
 
 
 x, y, w, h = cv2.boundingRect(convexhull2)
@@ -181,7 +181,7 @@ center_face2 = int((x + x + w) / 2), int((y + y + h) / 2)
 seamlessclone = cv2.seamlessClone(result, img2, img2_head_mask, center_face2, cv2.MIXED_CLONE)
 
 
-# In[ ]:
+# In[11]:
 
 
 cv2.imshow("End result", seamlessclone)

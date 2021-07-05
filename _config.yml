@@ -31,3 +31,6 @@ html:
   favicon: media/favicon.ico
   use_issues_button: true
   use_repository_button: true
+
+launch_buttons:
+  colab_url: https://colab.research.google.com/drive/1mbLSyIDEmhgveSjo0C3ArL0MnJYN8S8k?usp=sharing

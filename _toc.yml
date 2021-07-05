@@ -5,8 +5,8 @@ format: jb-book
 root: intro
 chapters:
 - file: how
+- file: theory
 - file: notebooks
 - file: steps
 - file: usage
 - file: lib
-- file: tmp
