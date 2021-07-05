@@ -116,11 +116,6 @@
    Референци
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tmp.html">
-   Content with notebooks
-  </a>
- </li>
 </ul>
 
     </div>
@@ -203,6 +198,39 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Вчитување на потребните пакети и слики кои ни се потребни
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#landmark">
+   Дефинирање на потребните детектор на лица и предвидувач на “landmark” точки на истите и нивно искористување
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delaunay">
+   Примена на методата на триангулација на Delaunay и наоѓање на триаголници на лицата соодветно
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Трансформација на содржината на секој триаголник од првата слика во соодветниот триаголник од втората
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Подобрувања на решението
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -213,6 +241,8 @@
                 
   <div class="section" id="id1">
 <h1>Чекори при извршување на програмата<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Вчитување на потребните пакети и слики кои ни се потребни<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Импорт на сите потребни пакети:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
@@ -230,6 +260,11 @@
 </pre></div>
 </div>
 </li>
+</ul>
+</div>
+<div class="section" id="landmark">
+<h2>Дефинирање на потребните детектор на лица и предвидувач на “landmark” точки на истите и нивно искористување<a class="headerlink" href="#landmark" title="Permalink to this headline">¶</a></h2>
+<ul>
 <li><p>Дефинирање на детекторот и предвидувачот користени за наоѓање на лица на дадена слика и модел за предвидување на 68 “landmark” точки на истите:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">detector</span> <span class="o">=</span> <span class="n">dlib</span><span class="o">.</span><span class="n">get_frontal_face_detector</span><span class="p">()</span>
 <span class="n">predictor</span> <span class="o">=</span> <span class="n">dlib</span><span class="o">.</span><span class="n">shape_predictor</span><span class="p">(</span><span class="s2">&quot;media/shape_predictor_68_face_landmarks.dat&quot;</span><span class="p">)</span>
@@ -265,6 +300,11 @@
 </div>
 <p><img alt="mask_example" src="_images/mask_example.jpg" /></p>
 </li>
+</ul>
+</div>
+<div class="section" id="delaunay">
+<h2>Примена на методата на триангулација на Delaunay и наоѓање на триаголници на лицата соодветно<a class="headerlink" href="#delaunay" title="Permalink to this headline">¶</a></h2>
+<ul>
 <li><p>Доколку го искористиме целото лице за директна замена, остануваме склони дека при некое движење на истото, насмевка или нешто друго, ќе се добие замена со послаб квалитет. Затоа, замената ќе ја донесеме на ниво на “landmark” точките и методата на триангулација на “Delaunay”. Помеѓу секои три најблиски од нив ќе нацртаме триаголници и замената ќе ја правиме помеѓу нив соодветно. Па така, доколку лицето за замена малку се помрдне, или се насмее, делот од сликата кој ќе биде афектиран од тоа ќе е значително помал:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">rect</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">convexhull</span><span class="p">)</span>
     <span class="n">subdiv</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Subdiv2D</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
@@ -324,6 +364,11 @@
 </div>
 <p>Со помош на трите точки од триаголникот, дефинираме правоаголник над него со соодветни x и y координати на една точка, должина и ширина како вредности. Тој правоаголник го опфаќа делот од внатре од триаголникот, но и тој надвор од него. За да се отстрани тој креираме маска со должина и ширина иста како неговата. Со помош на <strong>fillConvexPoly</strong> функцијата делот од маската кој е опфатен од триаголникот ќе го обоиме бел(вредноста 255), делот кој не е ќе си остане како што беше и кога го креиравме, црн. Кога маската ќе ја примениме на делот земен од изворната слика со помош на <strong>bitwise_and</strong> операцијата, го добиваме само делот од триаголникот кој ни треба, бидејќи црно(0) <strong>bitwise_and</strong> вредноста од сликата прави тој дел од сликата да стане црн, а со обоениот дел од маската сликата ќе си ја задржи бојата.</p>
 </li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Трансформација на содржината на секој триаголник од првата слика во соодветниот триаголник од втората<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul>
 <li><p>Откако ги добиеме “чисти” секој од соодветните триаголници кои ќе ги смениме, применуваме дополнителни трансформации:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">points1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">points1</span><span class="p">)</span>
     <span class="n">points2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">points2</span><span class="p">)</span>
@@ -350,6 +395,11 @@
 <p>На овој начин делот врз кој се запишува, најпрвин се зачувува. Потоа, преку функцијата за додавање се спречува презапишување врз веќе ставените вредности(додавање на 0 значи останување на моменталната вредност):</p>
 <p><img alt="new_face_with_partial_solution" src="_images/new_face_with_partial_solution.jpg" /></p>
 </li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>Подобрувања на решението<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul>
 <li><p>Со тоа ја имаме конечната вредност за лицето што треба да се смени. Со следниот код:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">convexhull2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convexHull</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">landmarks_points2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
 <span class="n">img2_face_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">img2_gray</span><span class="p">)</span>
@@ -384,6 +434,7 @@
 <p><img alt="end_res2" src="_images/end_res2.jpg" /></p>
 </li>
 </ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
