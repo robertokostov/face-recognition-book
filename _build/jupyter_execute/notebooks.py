@@ -44,14 +44,14 @@ mask = np.zeros_like(img1_gray)
 get_ipython().system('wget -nd https://github.com/JeffTrain/selfie/raw/master/shape_predictor_68_face_landmarks.dat;')
 
 
-# In[5]:
+# In[6]:
 
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 
-# In[6]:
+# In[7]:
 
 
 faces = detector(img1_gray)
@@ -93,7 +93,7 @@ for face in faces:
             indexes_triangles.append(triangle)
 
 
-# In[7]:
+# In[8]:
 
 
 faces2 = detector(img2_gray)
@@ -106,7 +106,7 @@ for face in faces2:
         landmarks_points2.append((x, y))
 
 
-# In[8]:
+# In[9]:
 
 
 img2_new_face = np.zeros((1024, 768, 3), np.uint8)
@@ -160,7 +160,7 @@ for triangle_index in indexes_triangles:
     img2_new_face[y: y + h, x: x + w] = img2_new_face_rect_area
 
 
-# In[9]:
+# In[10]:
 
 
 convexhull2 = cv2.convexHull(np.array(landmarks_points2, np.int32))
@@ -173,7 +173,7 @@ img2_head_noface = cv2.bitwise_and(img2, img2, mask=img2_face_mask)
 result = cv2.add(img2_head_noface, img2_new_face)
 
 
-# In[10]:
+# In[11]:
 
 
 x, y, w, h = cv2.boundingRect(convexhull2)
@@ -181,7 +181,7 @@ center_face2 = int((x + x + w) / 2), int((y + y + h) / 2)
 seamlessclone = cv2.seamlessClone(result, img2, img2_head_mask, center_face2, cv2.MIXED_CLONE)
 
 
-# In[11]:
+# In[12]:
 
 
 cv2.imshow("End result", seamlessclone)
